@@ -4,7 +4,7 @@ module CodeAnalyzer::CheckingVisitor
   describe Plain do
     let(:checker1) { mock(:checker) }
     let(:checker2) { mock(:checker) }
-    let(:visitor) { Plain.new(checkers: [checker1, checker2]) }
+    let(:visitor) { Plain.new(:checkers => [checker1, checker2]) }
 
     it "should check by all checkers" do
       filename = "filename"

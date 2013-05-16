@@ -2,9 +2,9 @@ require "spec_helper"
 
 module CodeAnalyzer::CheckingVisitor
   describe Default do
-    let(:checker1) { mock(:checker, interesting_nodes: [:class, :def]) }
-    let(:checker2) { mock(:checker, interesting_nodes: [:def, :call]) }
-    let(:visitor) { Default.new(checkers: [checker1, checker2]) }
+    let(:checker1) { mock(:checker, :interesting_nodes => [:class, :def]) }
+    let(:checker2) { mock(:checker, :interesting_nodes => [:def, :call]) }
+    let(:visitor) { Default.new(:checkers => [checker1, checker2]) }
 
     it "should check def node by all checkers" do
       filename = "filename"

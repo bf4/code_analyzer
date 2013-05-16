@@ -52,7 +52,7 @@ module CodeAnalyzer
     # @param [String] filename, is the filename of source code
     # @param [Integer] line_number, is the line number of the source code which is reviewing
     def add_warning(message, filename = @node.file, line_number = @node.line)
-      warnings << Warning.new(filename: filename, line_number: line_number, message: message)
+      warnings << Warning.new(:filename => filename, :line_number => line_number, :message => message)
     end
 
     # all warnings.
