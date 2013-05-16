@@ -1,5 +1,10 @@
 # encoding: utf-8
-require "ripper"
+begin
+  require "ripper"
+rescue LoadError
+  gem 'ripper'
+  require 'ripper'
+end
 require "code_analyzer/version"
 require "code_analyzer/nil"
 require "code_analyzer/sexp"
